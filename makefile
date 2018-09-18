@@ -11,7 +11,8 @@ BUILD_FOR = $(shell if [ -n "$(HOST)" ]; then echo $(HOST) ; else echo "LINUX"; 
 
 #SDL_GL_LIB = -lGL -lGLU
 
-LOKI_LIB = -Wl,-Rloki/lib -Lloki/lib -lloki
+LOKI_LIB = -Wl,-Lloki/lib -lloki
+#LOKI_LIB = -Wl,-Rloki/lib -Lloki/lib -lloki
 #COLDET_LIB = -Wl,-Rcoldet -Lcoldet -lcoldet
 
 CXXFLAGS=$(FLAGS) $(DEFS) \

@@ -6,6 +6,7 @@
 #include <SDL_video.h>
 #include <cassert> // yasli/random.h needs it
 #include "math3d.h"
+#include <climits> // for loki to compile...
 #include "yasli/random.h"
 
 namespace Util {
@@ -42,7 +43,8 @@ namespace Util {
 
   typedef std::pair<int, int> Pair2Int;
   typedef lt_pair<std::pair<int, int> > cmp_Pair2Int;
-  typedef std::map<Pair2Int, int, cmp_Pair2Int> MapOfPair2Int;
+  // TODO: why was this sorted?
+  typedef std::map<Pair2Int, int> MapOfPair2Int;
 
   /** count of Pair2Int(a,b) in the map.
    * @return 0 if no entry at that \e position

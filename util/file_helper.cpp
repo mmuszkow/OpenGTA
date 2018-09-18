@@ -75,16 +75,16 @@ namespace Util {
   bool FileHelper::existsInSystemFS(const std::string & file) const {
     if (file.length() == 0)
       return 0;
-#ifdef LINUX
-    return (access(file.c_str(), R_OK) == 0);
-#endif
-#ifdef WIN32
+//#ifdef LINUX
+//    return (access(file.c_str(), R_OK) == 0);
+//#endif
+//#ifdef WIN32
     FILE * f = fopen(file.c_str(), "rb");
     bool res = (f != NULL);
     if (f)
       fclose(f);
     return res;
-#endif
+//#endif
   }
 
   bool FileHelper::existsInVFS(const std::string & file) const {

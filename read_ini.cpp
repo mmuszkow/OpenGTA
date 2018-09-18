@@ -174,7 +174,7 @@ namespace OpenGTA {
           break;
       }
       //std::cout << uint32(line_start) - uint32(buffer) << std::endl; 
-      PHYSFS_uint32 begin_rest = PHYSFS_uint32(line_start) - PHYSFS_uint32(buffer);
+      PHYSFS_uint32 begin_rest = PHYSFS_uint32(line_start - buffer);
       offset = buf_len - begin_rest;
       memmove(buffer, &buffer[begin_rest], buf_len - begin_rest);
       read_bytes = buf_len - offset;
